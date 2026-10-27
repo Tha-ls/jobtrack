@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JobTrack | Minhas candidaturas</title>
+
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>JobTrack</h1>
+    <p>Seu próximo passo profissional começa com organização.</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <h2>Minhas candidaturas</h2>
+        <p>Acompanhe suas oportunidades em um só lugar.</p>
+      </div>
+
+      <button id="addButton" type="button">
+        + Nova candidatura
+      </button>
+    </section>
+
+    <section id="formContainer" class="card form-card hidden">
+      <h3>Nova candidatura</h3>
+
+      <form id="applicationForm">
+        <label for="company">Empresa *</label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          maxlength="100"
+          required
+          placeholder="Ex.: Empresa de tecnologia"
+        >
+
+        <label for="position">Cargo *</label>
+        <input
+          id="position"
+          name="position"
+          type="text"
+          maxlength="100"
+          required
+          placeholder="Ex.: Estágio em Desenvolvimento"
+        >
+
+        <label for="type">Tipo de oportunidade *</label>
+        <select id="type" name="type" required>
+          <option value="">Selecione</option>
+          <option value="Estágio">Estágio</option>
+          <option value="Júnior">Júnior</option>
+          <option value="Trainee">Trainee</option>
+          <option value="Outro">Outro</option>
+        </select>
+
+        <label for="status">Status do processo *</label>
+        <select id="status" name="status" required>
+          <option value="Candidatado">Candidatado</option>
+          <option value="Em andamento">Em andamento</option>
+          <option value="Entrevista">Entrevista</option>
+          <option value="Aprovado">Aprovado</option>
+          <option value="Rejeitado">Rejeitado</option>
+        </select>
+
+        <label for="link">Link da vaga (opcional)</label>
+        <input
+          id="link"
+          name="link"
+          type="url"
+          placeholder="https://..."
+        >
+
+        <div class="form-actions">
+          <button type="submit">Salvar candidatura</button>
+
+          <button
+            type="button"
+            id="cancelButton"
+            class="secondary-button"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="stats">
+      <article class="card">
+        <p>Total de candidaturas</p>
+        <div class="number" id="totalCount">0</div>
+      </article>
+
+      <article class="card">
+        <p>Em andamento</p>
+        <div class="number" id="progressCount">0</div>
+      </article>
+
+      <article class="card">
+        <p>Entrevistas</p>
+        <div class="number" id="interviewCount">0</div>
+      </article>
+    </section>
+
+    <section class="card applications">
+      <h3>Suas oportunidades</h3>
+
+      <div id="emptyMessage" class="empty">
+        <p>Você ainda não cadastrou nenhuma candidatura.</p>
+        <p>Adicione sua primeira oportunidade para começar!</p>
+      </div>
+
+      <div id="applicationList" class="application-list"></div>
+    </section>
+  </main>
+</body>
+</html>
